@@ -5,7 +5,19 @@ security:
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         in_memory:
-            memory: ~
+            memory:
+                users:
+                    bob:
+                        password: $2y$12$NNhfYCFKYcESiir.hfkqnex5QhS0XDmGxl5fSVlZCBECoAd8q29ke
+                        roles: 'ROLE_USER'
+                    jo:
+                        password: $2y$12$c3h6/Vcn2rPYRiAw17Fg9.AuNHXqkTzXtEocQuT5TitJWgi2xeURm
+                        roles: 'ROLE_ADMIN'
+
+    encoders:
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
+            cost: 12
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -21,4 +33,13 @@ security:
             #http_basic: ~
 
             # https://symfony.com/doc/current/security/form_login_setup.html
-            #form_login: ~
+            form_login:
+                login_path: security_login
+                check_path: security_login
+                csrf_token_generator: security.csrf.token_manager
+
+            logout:
+                # The route name the user can go to in order to logout
+                path: security_logout
+                # The name of the route to redirect to after logging out
+                target: homepage
