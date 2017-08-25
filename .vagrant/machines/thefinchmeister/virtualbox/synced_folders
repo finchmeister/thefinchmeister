@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/thefinchmeister":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/thefinchmeister","hostpath":"/Users/jfinch/PersonalProjects/thefinchmeister","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/jfinch/PersonalProjects/thefinchmeister","disabled":false,"__vagrantfile":true}}}
