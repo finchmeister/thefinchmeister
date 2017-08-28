@@ -71,7 +71,7 @@ class SpotifyController extends Controller
      */
     public function testingAction(Spotify $spotify, Request $request)
     {
-        $refreshToken = file_get_contents(__DIR__.'/refreshtoke');
+        $refreshToken = $this->getParameter('spotify_refresh_token');
         $spotify->getSession()->refreshAccessToken($refreshToken);
 
         $accessToken = $spotify->getSession()->getAccessToken();
@@ -79,7 +79,24 @@ class SpotifyController extends Controller
         $api = $spotify->getApi();
         $api->setAccessToken($accessToken);
 
-        return new Response(json_encode($api->getMyCurrentPlaybackInfo(), JSON_PRETTY_PRINT));
+        return new Response(json_encode($api->getMyRecentTracks(), JSON_PRETTY_PRINT));
+    }
 
+    /**
+     * @Route("/recently-played", name="spotify_recently_played")
+     * @param Spotify $spotify
+     * @param Request $request
+     * @return Response
+     */
+    public function getRecentlyPlayed(Spotify $spotify, Request $request)
+    {
+        $recentTracks = $spotify->getMyTop('artists', [
+            'time_range' => 'short_term'
+        ]);
+
+        return $this->render(
+            'spotify/recently_played.html.twig',
+            ['recentTracks' => $recentTracks->items,]
+        );
     }
 }

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% for recentTrack in recentTracks %}
+            <div class="col-xl-3">
+                {{ recentTrack.name }}
+
+                <img src="{{ recentTrack.images[2].url }}">
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}

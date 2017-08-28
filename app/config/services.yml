@@ -39,3 +39,4 @@ services:
             - '%spotify_client_id%'
             - '%spotify_client_secret%'
             - '%spotify_redirect_uri%'
+            - '%spotify_refresh_token%'
