@@ -11,10 +11,20 @@ Encore
     .cleanupOutputBeforeBuild()
 
     // will output as web/build/app.js
-    .addEntry('app', './assets/js/main.js')
+    //.addEntry('app', './assets/js/main.js')
+
+    .addEntry('3d', './assets/js/3d-stuff.js')
+
+    .createSharedEntry('vendor', [
+        'jquery',
+        'tether',
+        'bootstrap',
+        './assets/css/global.scss'
+    ])
+
 
     // will output as web/build/global.css
-    .addStyleEntry('global', './assets/css/global.scss')
+    //.addStyleEntry('global', './assets/css/global.scss')
 
     // allow sass/scss files to be processed
     .enableSassLoader(function(sassOptions) {}, {
@@ -27,7 +37,7 @@ Encore
     .enableSourceMaps(!Encore.isProduction())
 
 // create hashed filenames (e.g. app.abc123.css)
-// .enableVersioning()
+//    .enableVersioning()
 ;
 
 // export the final configuration
