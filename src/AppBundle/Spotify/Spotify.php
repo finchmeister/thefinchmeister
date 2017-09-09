@@ -1,7 +1,7 @@
 <?php
 
 
-namespace AppBundle\Service;
+namespace AppBundle\Spotify;
 
 use SpotifyWebAPI;
 

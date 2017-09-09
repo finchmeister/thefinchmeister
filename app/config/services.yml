@@ -34,9 +34,13 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
 
-    AppBundle\Service\Spotify:
+    AppBundle\Spotify\Spotify:
         arguments:
             - '%spotify_client_id%'
             - '%spotify_client_secret%'
             - '%spotify_redirect_uri%'
             - '%spotify_refresh_token%'
+
+    AppBundle\Instagram\Instagram:
+        arguments:
+            - '%instagram_user%'

@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <div class="row">
+        {# @var picture \AppBundle\Instagram\InstagramModel #}
+        {% for picture in instagram %}
+            <div class="col-4 col-md-2 p-0">
+                <a target="_blank" href="{{ picture.link }}">
+                    <img src="{{ picture.standardImageUrl }}" class="img-fluid" alt="{{ picture.captionText }}">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
