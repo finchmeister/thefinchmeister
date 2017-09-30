@@ -3,18 +3,35 @@
 {% block body %}
 
     <div class="bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <h1>The Finchmeister</h1>
+                    </div>
+                    <p>We want to explore. We’re curious people. Look back over history, people have put their lives at stake to go out and explore … We believe in what we’re doing. Now it’s time to go.</p>
+                </div>
+            </div>
+
+
+
+        </div>
 
     </div>
+
+
 
     <div class="container">
         <div class="row">
 
             <div class="col-6">
-                <h1>Hello</h1>
+
+
             </div>
 
             <div class="col-6">
-                <h1>Goodbye</h1>
+
+
             </div>
 
         </div>
@@ -22,6 +39,11 @@
     </div>
 
     {% include ':partials:instagram.html.twig'%}
+
+    {# The Beat Factory#}
+    <section>
+        {{ path('the_beat_factory') }}
+    </section>
 
 {% endblock %}
 

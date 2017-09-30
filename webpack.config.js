@@ -11,7 +11,7 @@ Encore
     .cleanupOutputBeforeBuild()
 
     // will output as web/build/app.js
-    //.addEntry('app', './assets/js/main.js')
+    //.addEntry('img/', './assets/img/')
 
     .createSharedEntry('vendor', [
         'jquery',
@@ -35,7 +35,7 @@ Encore
     .enableSourceMaps(!Encore.isProduction())
 
 // create hashed filenames (e.g. app.abc123.css)
-//    .enableVersioning()
+    .enableVersioning()
 ;
 
 // export the final configuration
