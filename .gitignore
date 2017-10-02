@@ -18,3 +18,4 @@
 /web/build/
 .idea
 .vagrant
+node_modules
