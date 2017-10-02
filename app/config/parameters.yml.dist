@@ -17,3 +17,8 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
+
+    spotify_client_id: ~
+    spotify_client_secret: ~
+    spotify_redirect_uri: ~
+    spotify_refresh_token: ~
