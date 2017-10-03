@@ -1,8 +1,11 @@
 FROM node:alpine
 
+WORKDIR /var/www/thefinchmeister
+
 COPY package.json ./
-COPY package.lock ./
+COPY yarn.lock ./
 
-RUN npm install
+RUN yarn install
 
-RUN yarn run encore dev
+COPY webpack.config.js ./
+#RUN yarn run encore dev

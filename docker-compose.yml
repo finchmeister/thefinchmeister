@@ -29,7 +29,7 @@ services:
         environment:
             - NODE_ENV=production
         volumes:
-            - ./:/usr/src/app
+            - ./:/var/www/thefinchmeister
         expose:
             - "8082"
         tty: true
