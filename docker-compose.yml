@@ -27,7 +27,7 @@ services:
             dockerfile: ./docker/node/Dockerfile
             context: ./
         environment:
-            - NODE_ENV=production
+            - NODE_ENV=development # Affects which yarn packages are installed
         volumes:
             - ./:/var/www/thefinchmeister
         expose:
